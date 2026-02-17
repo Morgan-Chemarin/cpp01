@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinc
 
 SRCS = \
     src/main.cpp \
-    src/Zombie.class.cpp \
+    src/Zombie.cpp \
     src/newZombie.cpp \
     src/randomChump.cpp
 

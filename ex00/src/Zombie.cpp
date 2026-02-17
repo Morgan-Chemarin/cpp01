@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dev <dev@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/17 13:29:41 by dev               #+#    #+#             */
-/*   Updated: 2026/02/17 13:29:56 by dev              ###   ########.fr       */
+/*   Created: 2026/02/17 13:22:32 by dev               #+#    #+#             */
+/*   Updated: 2026/02/17 13:27:12 by dev              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/HumanB.hpp"
-#include "../inc/Weapon.hpp"
+#include "../inc/Zombie.hpp"
 #include <iostream>
 
-HumanB::HumanB(const std::string& name)
-	: _name(name), _weapon(NULL)
-{}
-
-HumanB::~HumanB() {}
-
-void HumanB::setWeapon(Weapon& weapon)
+Zombie::Zombie( std::string name )
 {
-	this->_weapon = &weapon;
+	this->_name = name;
 }
 
-void	HumanB::attack(void) const
+Zombie::~Zombie( void )
 {
-	if (this->_weapon)
-		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
-	else
-		std::cout << this->_name << " is unarmed" << std::endl;
+	std::cout << "Destructor called for: " << this->_name << std::endl;
+}
+
+void Zombie::announce( void ) const
+{
+	std::cout << this->_name << ":  BraiiiiiiinnnzzzZ..." << std::endl;
+	return;
 }
